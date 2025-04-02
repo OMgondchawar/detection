@@ -1,0 +1,19 @@
+names:
+- Indian Plate - v1 2024-02-28 9-18pm
+- auto
+- bike
+- car
+- object
+- person
+- scootor
+- truck
+nc: 8
+roboflow:
+  license: CC BY 4.0
+  project: object-detection-bounding-box-js5eg
+  url: https://universe.roboflow.com/vikas-ykiwy/object-detection-bounding-box-js5eg/dataset/3
+  version: 3
+  workspace: vikas-ykiwy
+test: ../test/images
+train: ../train/images
+val: ../valid/images
