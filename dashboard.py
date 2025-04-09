@@ -4,18 +4,46 @@ from PIL import Image
 from io import BytesIO
 import json
 
-st.set_page_config(page_title="AI Parking System", layout="centered")
+# 🌐 Set page config
+st.set_page_config(page_title="AI-powered Secure Parking System", layout="wide")
 
-# 🔵 Custom Style
+# 🎨 Custom CSS Styling
 st.markdown("""
     <style>
-        .main { background-color: #f0f2f6; }
-        h1, h2, h3 { color: #1f4e79; }
-        .stButton > button {
+        .main {
+            background-color: #f5f7fa;
+        }
+        .block-container {
+            padding: 0rem 2rem 2rem 2rem;
+        }
+        header, footer {visibility: hidden;}
+        .css-1rs6os.edgvbvh3 {
+            background: linear-gradient(180deg, #9C27B0 0%, #E91E63 100%);
+            padding: 2rem 1rem 2rem 1rem;
+            border-radius: 0 20px 20px 0;
+        }
+        .stButton>button {
             background-color: #1f4e79;
             color: white;
-            border-radius: 10px;
             padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .stat-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1f4e79;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #666;
         }
         .authorized {
             color: green;
@@ -28,8 +56,26 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# 🚀 Sidebar with Logo and Gradient
+with st.sidebar:
+    st.image("C:/Users/omgon/detection/logo.png.png", width=150)
+    st.markdown("## **Secure Parking**")
+    st.markdown("AI-powered License Plate Detection & Recognition")
+
+# 🧠 Title and Intro
 st.title("🚗 AI-powered Secure Parking System")
 st.write("Upload an image or video for license plate detection and recognition.")
+
+# 📊 Stat Cards (dummy placeholders — you can replace these later with actual backend stats)
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+    st.markdown('<div class="stat-card"><div class="stat-number">186</div><div class="stat-label">Plates Processed</div></div>', unsafe_allow_html=True)
+with col2:
+    st.markdown('<div class="stat-card"><div class="stat-number">172</div><div class="stat-label">Authorized Vehicles</div></div>', unsafe_allow_html=True)
+with col3:
+    st.markdown('<div class="stat-card"><div class="stat-number">14</div><div class="stat-label">Unauthorized Alerts</div></div>', unsafe_allow_html=True)
+with col4:
+    st.markdown('<div class="stat-card"><div class="stat-number">98%</div><div class="stat-label">Recognition Accuracy</div></div>', unsafe_allow_html=True)
 
 # 📷 Upload Image Section
 st.header("📷 Upload Image")
